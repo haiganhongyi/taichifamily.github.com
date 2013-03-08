@@ -1,0 +1,34 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+      <loc>{{ site.url }}</loc>
+      <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>1.0</priority>
+  </url>
+  <!-- 这是一次修改：/archives.html-->
+  <url>
+        <loc>{{ site.url }}/archives.html</loc>
+        <priority>0.6</priority>
+    </url>
+   
+   <url>
+        <loc>{{ site.url }}/contact.html</loc>
+        <priority>0.6</priority>
+    </url>
+	<!-- 添加修改完毕-->
+  {% for post in site.posts %}
+  <url>
+      <loc>{{ site.url }}{{ post.url }}/</loc>
+    <lastmod>{{ post.date | date: "%Y-%m-%d" }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  {% endfor %}
+
+</urlset>
