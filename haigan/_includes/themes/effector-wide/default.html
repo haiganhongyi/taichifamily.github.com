@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta name="author" content="{{ site.author }}"/>
+  <!--sina weibo -->
+  <meta property="wb:webmaster" content="b522acfed1961f45" />
+  <meta name="viewport" content="width=device-width; initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.auhor }}</title>
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="/assets/css/effector-wide.css">
+  <!--<link rel="stylesheet" type="text/css" href="/assets/css/effector-wide.css">
+  <!--<link rel="stylesheet" href="/assets/css/highlight.css">
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS for {{ site.author }}" href="{{ site.url }}/feed/">
+  <script type="text/javascript" src="/assets/js/jquery.js"></script>
+</head>
+<body onload="prettyPrint()">
+  <div class="container">
+      <header>
+	  <h1 class="sitename">燎淩@海敢弘毅</h1>
+	  </header>
+      <div class="nav">
+		<a title="home page" class="" href="{{ site.url }}/">主页</a>
+		<a title="about" class="" href="{{ site.url }}/about/" >关于</a>
+		<a title="archive" class="" href="{{ site.url }}/archive/">存档</a>
+		<a title="tags"href="{{ site.url }}/tag/">标签</a>
+		<a title="links" class="" href="{{ site.url }}/links/">链接</a>
+		<a title="feed" class="" href="{{ site.url }}/feed/index.xml" target="_black">订阅</a>
+		<a title="feed" class="" href="{{ site.url }}/contact/" target="_black">留言</a>
+		</div>
+	<!--神奇，少了一一个div文章列表就全部居中啦！  -->
+  <article class="content">
+        {{ content }}
+  </article>
+<footer>
+  <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<small><a href="https://github.com/haiganhongyi/haiganhongyi.github.com">Designed</a> by <a href="http://haiganhongyi.github.com">liao ling</a> | Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>, <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> and <a href="http://pages.github.com/">GitHub Pages</a> | 版权声明：<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/">CC BY-NC-SA 3.0</a> | <span class="label label-info">{{site.time | date:"%Y-%m-%d %H:%M:%S"}}</span></small></p>
+</footer>
+</div>
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('pre').addClass('prettyprint linenums') //添加Google code Hight需要的class
+    })
+</script>
+{% if page.url != "/" %}
+<script>
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow key code
+            {% if page.previous %}
+        url = '{{page.previous.url}}';
+        {% endif %}
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow key code
+            {% if page.next %}
+        url = '{{page.next.url}}';
+        {% endif %}
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+{% endif %}
+ <section id="javascript">
+	<script type="text/javascript">
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-8871110-4']);
+              _gaq.push(['_setDomainName', 'www.bjt.name']);
+              _gaq.push(['_trackPageview']);
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+            </script>            
+
+  </section>	
+</body>
+</html>

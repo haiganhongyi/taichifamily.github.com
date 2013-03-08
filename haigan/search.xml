@@ -1,0 +1,13 @@
+---
+layout: none
+---
+<!--于20120226日添加静态搜索 -->
+
+//样式表
+<link rel="stylesheet" href="/css/jquery-ui-1.8.18.custom.css" type="text/css">
+
+//js
+<script src="/js/jquery-ui-1.8.18.custom.js"></script>
+
+//添加 DOM
+<input id="J_search" placeholder="Simple Search"/>

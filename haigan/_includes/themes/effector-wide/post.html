@@ -1,0 +1,41 @@
+<div class="wrapper">
+<article>
+<h1>{{ page.title }}|{{ site.author }}<small class="pull-right">{{ page.date | date:"%b %d, %Y" }}</small></h1>
+{{ content }}
+</article>
+{% if page.tags %}
+<div>
+{% for tag in page.tags %}
+    <a class="label label-success" href="/tag/#{{ tag }}">{{ tag }}</a>
+{% endfor %}</div>
+{% endif %}
+<!-- Duoshuo Comment BEGIN -->
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"haiganhongyi"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+<!-- Duoshuo Comment END -->
+<hr>
+<ul class="pager">
+    {% if page.previous %}
+    <li class="previous">
+    <a href="{{ page.previous.url }}">&larr; {{ page.previous.title }}</a>
+    </li>
+    {% endif %} <small>按 j或 k 翻页</small>
+    {% if page.next %} 
+    <li class="next">
+    <a href="{{ page.next.url }}" class="pull-right">{{ page.next.title }} &rarr;</a>
+    </li>
+    {% endif %}   
+</ul>
+<hr>
